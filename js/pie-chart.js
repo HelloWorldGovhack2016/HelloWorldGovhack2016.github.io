@@ -2,6 +2,7 @@ var Pie = function() {
     var doughnut = $("#doughnut");
     var andyline = $("#andyline");
     var myLineChart;
+    var myDoughnutChart;
 
     var lineData = {
         "NZ": [
@@ -19,12 +20,9 @@ var Pie = function() {
     function updateLineChart(label) {
         var data = lineData[label];
         for (var i = 0; i < data.length; i++) {
-            console.log(data[i]);
-            for (var j = 0; j < data[i].length; j++) {
-                myLineChart.data.datasets[i].data[j] = data[i][j];
-                myLineChart.update();
-            }
+            myLineChart.data.datasets[i].data = data[i];
         }
+        myLineChart.update(3000, false);
     }
 
     function initFunction() {
@@ -54,7 +52,7 @@ var Pie = function() {
                         }]
                 };
 
-            var myDoughnutChart = 
+            myDoughnutChart = 
             new Chart(doughnut, {
                 type: 'pie',
                 data: pieData,
