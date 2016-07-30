@@ -42,12 +42,12 @@ var Pie = function() {
                         {
                             data: [750, 10000],
                             backgroundColor: [
-                                "#FF6384",
-                                "#36A2EB",
+                                "#f42525",
+                                "#1a53ff",
                             ],
                             hoverBackgroundColor: [
-                                "#FF6384",
-                                "#36A2EB",
+                                "#f42525",
+                                "#1a53ff",
                             ]
                         }]
                 };
@@ -62,6 +62,10 @@ var Pie = function() {
                             console.log("hey");
                             updateLineChart(legendItem.text);
                         }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Hey bb how u doin'
                     }
                 }
             });
@@ -126,6 +130,26 @@ var Pie = function() {
             new Chart(andyline, {
                 type: 'line',
                 data: lineInitData,
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Hey bb how u doin'
+                    },
+                    scales: {
+                        yAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Y babby'
+                            }
+                        }],
+                        xAxes: [{
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'X babby'
+                            }
+                        }],
+                    }
+                }
             });
     }
 
