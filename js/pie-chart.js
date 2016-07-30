@@ -5,16 +5,18 @@ var Pie = function() {
     var myDoughnutChart;
 
     var lineData = {
-        "NZ": [
-              [11, 21, 31, 41, 51, 61, 71],
-              [15, 25, 35, 45, 55, 65, 75],
-              [16, 26, 36, 46, 56, 66, 76]
+        "NZ": 
+              [
+              [686, 1101, 986, 898, 777, 755, 767, 846, 831, 924], //Refugees/1m Pop
+              [178, 177, 175, 173, 172, 171, 170, 168, 165, 163], //Refugee Quota/1m Pop
+              //[5154, 11289, 11326, 10680, 10953, 10333, 9747, 9715, 10875, 11416]  //Migrants/1m Pop
               ],
-        "Global": [
-                  [51, 41, 31, 21, 11, 61, 71],
-                  [56, 46, 36, 26, 16, 66, 76],
-                  [58, 48, 38, 28, 18, 68, 78]
-                  ]
+        "Aus": 
+              [
+              [625, 605, 631, 634, 626, 616, 879, 594, 583, 583], //Refugees/1m Pop
+              [293, 288, 282, 277, 272, 269, 527, 259, 254, 251], //Refugee Quota/1m Pop
+              //[8792, 9214, 9692, 10355, 9483, 9553, 10774, 10985, 10123, 10123]  //Migrants/1m Pop
+              ],
     }
 
     function updateLineChart(label) {
@@ -36,11 +38,11 @@ var Pie = function() {
             var pieData = {
                     labels: [
                         "NZ",
-                        "Global"
+                        "Aus"
                     ],
                     datasets: [
                         {
-                            data: [750, 10000],
+                            data: [4608200, 23940300],
                             backgroundColor: [
                                 "#f42525",
                                 "#1a53ff",
@@ -65,7 +67,7 @@ var Pie = function() {
                     },
                     title: {
                         display: true,
-                        text: 'Hey bb how u doin'
+                        text: 'Population 2016'
                     }
                 }
             });
@@ -73,10 +75,10 @@ var Pie = function() {
             myDoughnutChart.config.options.onClick = handleDoughnutClick;
 
             var lineInitData = {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: ["2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016"],
                 datasets: [
                     {
-                        label: "Migration",
+                        label: "Refugees/1m Pop",
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: "rgba(0,153,255,0.4)",
@@ -92,7 +94,7 @@ var Pie = function() {
                         spanGaps: false,
                     },
                     {
-                        label: "Immigration",
+                        label: "Refugee Quota/1m Pop",
                         fill: false,
                         lineTension: 0.1,
                         backgroundColor: "rgba(255,0,64,0.4)",
@@ -107,22 +109,22 @@ var Pie = function() {
                         data: lineData["NZ"][1].slice(0),
                         spanGaps: false,
                     },
-                    {
-                        label: "Another",
-                        fill: false,
-                        lineTension: 0.1,
-                        backgroundColor: "rgba(0,230,0,0.4)",
-                        borderColor: "rgba(0,230,0,1)",
-                        borderCapStyle: 'butt',
-                        borderDash: [],
-                        pointBorderWidth: 1,
-                        pointHoverRadius: 5,
-                        pointHoverBorderWidth: 2,
-                        pointRadius: 1,
-                        pointHitRadius: 10,
-                        data: lineData["NZ"][2].slice(0),
-                        spanGaps: false,
-                    }
+              //     {
+              //         label: "Migrants/1m Pop",
+              //         fill: false,
+              //         lineTension: 0.1,
+              //         backgroundColor: "rgba(0,230,0,0.4)",
+              //         borderColor: "rgba(0,230,0,1)",
+              //         borderCapStyle: 'butt',
+              //         borderDash: [],
+              //         pointBorderWidth: 1,
+              //         pointHoverRadius: 5,
+              //         pointHoverBorderWidth: 2,
+              //         pointRadius: 1,
+              //         pointHitRadius: 10,
+              //         data: lineData["NZ"][2].slice(0),
+              //         spanGaps: false,
+              //     }
                 ]
             };
 
