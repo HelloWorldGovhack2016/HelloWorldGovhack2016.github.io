@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>$whois welcometo.nz</title>
+    <meta charset="utf-8"/>
+  </head>
+  <body style="background: black; color: white;">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/ghost-typer.js"></script><pre>
+ #####                  #     #                           ###      #     #####
+#     #   ####   #    # #     #    ##     ####   #    #   ###     ##    #     #
+#        #    #  #    # #     #   #  #   #    #  #   #     #     # #    #
+#  ####  #    #  #    # #######  #    #  #       ####     #        #    ######
+#     #  #    #  #    # #     #  ######  #       #  #              #    #     #
+#     #  #    #   #  #  #     #  #    #  #    #  #   #             #    #     #
+ #####    ####     ##   #     #  #    #   ####   #    #          #####   #####
+
+
+</pre>
+
+
+    <code style="background: black;">
+      login: <span id="typing"></span><br>
+      <span id="step_2" hidden="hidden">password:</span> <span id="typing_2"></span><br><br>
+      <span id="step_3" hidden="hidden">neo@govhack.nz$ <span id="typing_3"></span><span id="curser">█</span></span>
+      <br>
+      <span id="whois_output"></span>
+    </code>
+    <script>
+    var write_whois = function() {
+      $("#whois_output").ghosttypeonce({
+        message: "version: <b>1986</b><br>domain_name: welcome.nz<br>query_status: <span style=\"color: red\">402 Payment Required</span><br>",
+        timePause: 4000,
+        timeWrite: 20,
+        callback: function(){window.location.href = "/"}
+      })
+    }
+    setTimeout(function() {
+        $("#typing").ghosttypeonce({
+          message: 'neo',
+          callback: function() {
+            $("#step_2").show(0, function() {
+            $("#typing_2").ghosttypeonce({
+              message: '************',
+              callback: function() {
+                $("#step_3").show(0, function() {
+                    setTimeout(function() {
+                      $("#typing_3").ghosttypeonce({
+                        message: "whois welcome.nz",
+                        callback: function() {$("#curser").hide(0, write_whois())}});
+                    }, 300);});
+                }
+              })})}});
+          }, 1000);
+    </script>
+  </body>
+</html>
