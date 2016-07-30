@@ -22,9 +22,9 @@ var Pie = function() {
             console.log(data[i]);
             for (var j = 0; j < data[i].length; j++) {
                 myLineChart.data.datasets[i].data[j] = data[i][j];
+                myLineChart.update();
             }
         }
-        myLineChart.update();
     }
 
     function initFunction() {
@@ -56,7 +56,7 @@ var Pie = function() {
 
             var myDoughnutChart = 
             new Chart(doughnut, {
-                type: 'doughnut',
+                type: 'pie',
                 data: pieData,
                 options: {
                     legend: {
