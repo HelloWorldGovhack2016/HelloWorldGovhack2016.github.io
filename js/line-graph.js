@@ -60,7 +60,13 @@ var myLineChart = new Chart(ctx, {
     }
 });
 
-  var interval = setInterval(function(){
+var interval;
+var hasStarted = false;
+
+var observer = new MutationObserver(function(mutations) {
+    if (hasStarted) return;
+    hasStarted = true;
+    interval = setInterval(function(){
     var newLabel = startingData.labels[startingData.labels.length-1] + 1;
     startingData.labels.push(newLabel);
     myLineChart.update(3000);
@@ -68,4 +74,9 @@ var myLineChart = new Chart(ctx, {
       clearInterval(interval);
     };
   }, 2000);
+});
+
+observer.observe(document.querySelector('#watcher'), {
+    attributes: true
+});
 
