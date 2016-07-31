@@ -77,6 +77,10 @@ footer {
   padding-top: 70px;
 }
 
+.made-by-text {
+  margin-top: 100px;
+}
+
 .bounce {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
