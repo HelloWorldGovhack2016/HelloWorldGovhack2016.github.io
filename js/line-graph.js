@@ -60,25 +60,30 @@ var myLineChart = new Chart(ctx, {
     }
 });
 
-var interval;
-var hasStarted = false;
 
-var observer = new MutationObserver(function(mutations) {
-    if (hasStarted) return;
-    hasStarted = true;
+(function() {
+  var interval;
+  var hasStarted = false;
 
-    interval = setInterval(function(){
-    var newLabel = startingData.labels[startingData.labels.length-1] + 1;
-    startingData.labels.push(newLabel);
-    myLineChart.update(3000);
-    if (newLabel == "2015") {
-      clearInterval(interval);
-    };
-  }, 2000);
-  
-});
+  var observer = new MutationObserver(function(mutations) {
+      if (hasStarted) return;
+      hasStarted = true;
 
-observer.observe(document.querySelector('#stackup-watcher'), {
-    attributes: true
-});
+      interval = setInterval(function(){
+      var newLabel = startingData.labels[startingData.labels.length-1] + 1;
+      startingData.labels.push(newLabel);
+      myLineChart.update(3000);
+      if (newLabel == "2015") {
+        clearInterval(interval);
+      };
+
+    }, 2000);
+    
+  });
+
+  observer.observe(document.querySelector('#stackup-watcher'), {
+      attributes: true
+  });
+})();
+
 
