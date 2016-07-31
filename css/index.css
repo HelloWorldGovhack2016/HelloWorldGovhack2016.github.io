@@ -66,6 +66,17 @@ footer {
   margin-left: 60px;
 }
 
+.nav-text {
+  color:white;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.home-text {
+  text-align: center;
+  padding-top: 70px;
+}
+
 .bounce {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
