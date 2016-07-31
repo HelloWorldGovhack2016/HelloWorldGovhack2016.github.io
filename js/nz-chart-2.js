@@ -53,11 +53,27 @@ var myLineChart3 = new Chart(ctx2, {
     }
 });
 
-var interval3 = setInterval(function(){
-  var newLabel3 = startingData3.labels[startingData3.labels.length-1] + 1;
-  startingData3.labels.push(newLabel3);
-  myLineChart3.update(3000);
-  if (newLabel3 == "2015") {
-    clearInterval(interval3);
-  };
-}, 2000);
+
+(function() {
+  var interval;
+  var hasStarted = false;
+
+  var observer = new MutationObserver(function(mutations) {
+      if (hasStarted) return;
+      hasStarted = true;
+
+      interval = setInterval(function(){
+          var newLabel3 = startingData3.labels[startingData3.labels.length-1] + 1;
+          startingData3.labels.push(newLabel3);
+          myLineChart3.update(3000);
+          if (newLabel3 == "2015") {
+            clearInterval(interval);
+          };
+      }, 2000);
+
+  });
+
+  observer.observe(document.querySelector('#diff-watcher'), {
+      attributes: true
+  });
+})();

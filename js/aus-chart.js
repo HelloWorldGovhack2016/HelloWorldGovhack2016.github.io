@@ -61,26 +61,28 @@ var ausLineChart = new Chart(ctxTwo, {
 });
 
 
-var intervalTwo;
-var hasStarted2 = false;
+(function() {
+  var interval;
+  var hasStarted = false;
 
-var observer2 = new MutationObserver(function(mutations) {
-    if (hasStarted2) return;
-    hasStarted2 = true;
+  var observer = new MutationObserver(function(mutations) {
+      if (hasStarted) return;
+      hasStarted = true;
 
-  intervalTwo = setInterval(function(){
-    var newLabelTwo = startingDataTwo.labels[startingDataTwo.labels.length-1] + 1;
-    startingDataTwo.labels.push(newLabelTwo);
-    ausLineChart.update(3000);
-    if (newLabelTwo == "2015") {
-      clearInterval(intervalTwo);
-    };
-  }, 2000);
-  
-});
+    interval = setInterval(function(){
+      var newLabelTwo = startingDataTwo.labels[startingDataTwo.labels.length-1] + 1;
+      startingDataTwo.labels.push(newLabelTwo);
+      ausLineChart.update(3000);
+      if (newLabelTwo == "2015") {
+        clearInterval(interval);
+      };
+    }, 2000);
 
-observer2.observe(document.querySelector('#stackup-watcher'), {
-    attributes: true
-});
+  });
+
+  observer.observe(document.querySelector('#stackup-watcher'), {
+      attributes: true
+  });
+})();
 
 
