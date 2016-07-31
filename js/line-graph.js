@@ -66,6 +66,7 @@ var hasStarted = false;
 var observer = new MutationObserver(function(mutations) {
     if (hasStarted) return;
     hasStarted = true;
+
     interval = setInterval(function(){
     var newLabel = startingData.labels[startingData.labels.length-1] + 1;
     startingData.labels.push(newLabel);
@@ -74,9 +75,10 @@ var observer = new MutationObserver(function(mutations) {
       clearInterval(interval);
     };
   }, 2000);
+  
 });
 
-observer.observe(document.querySelector('#watcher'), {
+observer.observe(document.querySelector('#stackup-watcher'), {
     attributes: true
 });
 
