@@ -29,6 +29,9 @@ var Pie = function () {
         myMigrantChart.data.datasets[0].data = data[2];
         myMigrantChart.update(3000, false);
         myLineChart.update(3000, false);
+
+        if (label == "NZ") $("#results-header").text("New Zealand results")
+        else $("#results-header").text("Australian results")
     }
 
     function initFunction() {
