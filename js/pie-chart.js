@@ -7,9 +7,9 @@ var Pie = function() {
     var lineData = {
         "NZ": 
               [
-              [686, 1101, 986, 898, 777, 755, 767, 846, 831, 924], //Refugees/1m Pop
+              [176,262,233,240,261,199,304,316,279,381], //Refugees/1m Pop
               [178, 177, 175, 173, 172, 171, 170, 168, 165, 163], //Refugee Quota/1m Pop
-              //[5154, 11289, 11326, 10680, 10953, 10333, 9747, 9715, 10875, 11416]  //Migrants/1m Pop
+              //[5664,12129,12079,11339,11469,10889,10209,10244,11428,11958]  //Migrants/1m Pop
               ],
         "Aus": 
               [
@@ -59,12 +59,6 @@ var Pie = function() {
                 type: 'pie',
                 data: pieData,
                 options: {
-                    legend: {
-                        onClick: function (event, legendItem) {
-                            console.log("hey");
-                            updateLineChart(legendItem.text);
-                        }
-                    },
                     title: {
                         display: true,
                         text: 'Population 2016'
@@ -109,22 +103,22 @@ var Pie = function() {
                         data: lineData["NZ"][1].slice(0),
                         spanGaps: false,
                     },
-              //     {
-              //         label: "Migrants/1m Pop",
-              //         fill: false,
-              //         lineTension: 0.1,
-              //         backgroundColor: "rgba(0,230,0,0.4)",
-              //         borderColor: "rgba(0,230,0,1)",
-              //         borderCapStyle: 'butt',
-              //         borderDash: [],
-              //         pointBorderWidth: 1,
-              //         pointHoverRadius: 5,
-              //         pointHoverBorderWidth: 2,
-              //         pointRadius: 1,
-              //         pointHitRadius: 10,
-              //         data: lineData["NZ"][2].slice(0),
-              //         spanGaps: false,
-              //     }
+              //    {
+              //        label: "Migrants/1m Pop",
+              //        fill: false,
+              //        lineTension: 0.1,
+              //        backgroundColor: "rgba(0,230,0,0.4)",
+              //        borderColor: "rgba(0,230,0,1)",
+              //        borderCapStyle: 'butt',
+              //        borderDash: [],
+              //        pointBorderWidth: 1,
+              //        pointHoverRadius: 5,
+              //        pointHoverBorderWidth: 2,
+              //        pointRadius: 1,
+              //        pointHitRadius: 10,
+              //        data: lineData["NZ"][2].slice(0),
+              //        spanGaps: false,
+              //    }
                 ]
             };
 
@@ -141,13 +135,18 @@ var Pie = function() {
                         yAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'Y babby'
+                                labelString: 'People'
+                            },
+                            ticks: {
+                                max: 1200,
+                                min: 0,
+                                stepSize: 100
                             }
                         }],
                         xAxes: [{
                             scaleLabel: {
                                 display: true,
-                                labelString: 'X babby'
+                                labelString: 'Year'
                             }
                         }],
                     }
