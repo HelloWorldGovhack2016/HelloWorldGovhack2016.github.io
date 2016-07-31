@@ -52,6 +52,11 @@ footer {
   background-color: #2C3E50;
 }
 
+.section-info {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
 .bounce {
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
