@@ -97,3 +97,8 @@ footer {
     transform: translateX(-5px);
   }
 }
+
+canvas {
+  height: 100%;
+  width: 100%;
+}

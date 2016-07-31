@@ -69,7 +69,26 @@
                 <!-- Set the second background image using inline CSS below. -->
                 <div class="fill">
                     <div class="container">
-
+                        <div class="row" style="padding-bottom: 20px;">
+                            <div class="col-md-6">
+                                <h2>Accepted migrants and refugees</h2>
+                                <p>
+                                    Here you can see the amount of migrants and refugees accepted into New Zealand and Australia normalized by population. <strong>Click on the segments of the pie chart</strong> to see how New Zealand and Australia compare.
+                                </p>
+                            </div>
+                            <div class='col-md-6'>
+                                <canvas id="doughnut" style="width:100%;"></canvas>
+                            </div>
+                        </div>
+                        <div class='row'>
+                            <h2 id="results-header">New Zealand results</h2>
+                            <div class='col-md-6'>
+                                <canvas id="refugee-line"></canvas>
+                            </div>
+                            <div class='col-md-6'>
+                                <canvas id="migrant-line"></canvas>
+                            </div>  
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,6 +114,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.0/Chart.bundle.js"></script>
+    <script src="./js/pie-chart.js"></script>
     <script src="./js/line-graph.js"></script>
     <script src="./js/aus-chart.js"></script>
     <!-- Script to Activate the Carousel -->
