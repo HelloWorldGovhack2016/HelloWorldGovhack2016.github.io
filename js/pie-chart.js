@@ -136,7 +136,7 @@ var Pie = function () {
                 options: {
                     title: {
                         display: true,
-                        text: 'Migrants taken in per year'
+                        text: 'Migrants accepted by year'
                     },
                     scales: {
                         yAxes: [{
@@ -167,8 +167,8 @@ var Pie = function () {
                 options: {
                     title: {
                         display: true,
-                        text: 'Refugees taken in per year'
-                    },
+                        text: 'Refugees accepted by year'
+                    },  
                     scales: {
                         yAxes: [{
                             scaleLabel: {
